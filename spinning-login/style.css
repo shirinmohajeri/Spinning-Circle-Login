@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f1729;
+}
+
+.container {
+  position: relative;
+  width: 500px;      /* was 340px */
+  height: 500px;      /* was 340px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The ring made of 24 individual tick marks around the form */
+.spin-ring {
+  position: absolute;
+  inset: 0;
+}
+
+.tick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 22px;
+  margin-left: -3.5px;
+  margin-top: -270px;          /* was -166px */
+  background: #60a5fa;
+  border-radius: 6px;
+  transform-origin: 45% 270px;  /* was 166px */
+  transform: rotate(calc(var(--i) * 10deg)); /* 360 / 36 = 10deg */
+  animation: tick-pulse 3.6s linear infinite;
+  animation-play-state: paused; /* keep this default */
+  animation-delay: calc(var(--i) * -0.15s);
+}
+
+.container.loading .tick {
+  animation-play-state: running;
+}
+
+@keyframes tick-pulse {
+  0%   { opacity: 1; }
+  30%  { opacity: 0.1; }
+  100% { opacity: 0.1; }
+}
+
+/* The login card sitting in the center of the ring */
+.login-box {
+  position: relative;
+  width: 290px;
+  background: rgba(20, 30, 55, 0.9);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 16px  20px 16px 20px;
+  padding: 28px 24px;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+  z-index: 1;
+}
+
+.login-box h2 {
+  color: #60a5fa;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;   /* make sure this line is still here */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #60a5fa;
+  background: #141e37;   /* small patch so the border line doesn't cut through the label */
+  padding: 0 4px;
+  left: 12px;
+}
+
+.input-box input:focus {
+  border-bottom-color: #60a5fa;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.forgot-password a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  color: #60a5fa;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 500px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: rgb(81, 68, 115);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.signup-link a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  color: #60a5fa;
+}

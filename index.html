@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spinning Circle Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="spin-ring">
+      <span class="tick" style="--i: 0"></span>
+      <span class="tick" style="--i: 1"></span>
+      <span class="tick" style="--i: 2"></span>
+      <span class="tick" style="--i: 3"></span>
+      <span class="tick" style="--i: 4"></span>
+      <span class="tick" style="--i: 5"></span>
+      <span class="tick" style="--i: 6"></span>
+      <span class="tick" style="--i: 7"></span>
+      <span class="tick" style="--i: 8"></span>
+      <span class="tick" style="--i: 9"></span>
+      <span class="tick" style="--i: 10"></span>
+      <span class="tick" style="--i: 11"></span>
+      <span class="tick" style="--i: 12"></span>
+      <span class="tick" style="--i: 13"></span>
+      <span class="tick" style="--i: 14"></span>
+      <span class="tick" style="--i: 15"></span>
+      <span class="tick" style="--i: 16"></span>
+      <span class="tick" style="--i: 17"></span>
+      <span class="tick" style="--i: 18"></span>
+      <span class="tick" style="--i: 19"></span>
+      <span class="tick" style="--i: 20"></span>
+      <span class="tick" style="--i: 21"></span>
+      <span class="tick" style="--i: 22"></span>
+      <span class="tick" style="--i: 23"></span>
+      <span class="tick" style="--i: 24"></span>
+      <span class="tick" style="--i: 25"></span>
+     <span class="tick" style="--i: 26"></span>
+    <span class="tick" style="--i: 27"></span>
+    <span class="tick" style="--i: 28"></span>
+   <span class="tick" style="--i: 29"></span>
+   <span class="tick" style="--i: 30"></span>
+   <span class="tick" style="--i: 31"></span>
+   <span class="tick" style="--i: 32"></span>
+   <span class="tick" style="--i: 33"></span>
+   <span class="tick" style="--i: 34"></span>
+   <span class="tick" style="--i: 35"></span>
+    </div>
+
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="email" placeholder=" " required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder=" " required />
+          <label>Password</label>
+        </div>
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="signup-link">
+          <a href="#">Signup</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+  const form = document.querySelector('form');
+  const container = document.querySelector('.container');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // remove this once you connect real login logic
+    container.classList.add('loading');
+
+    // simulate login process — replace with your real logic
+    setTimeout(() => {
+      container.classList.remove('loading');
+    }, 2500);
+  });
+</script>
+</body>
+</html>

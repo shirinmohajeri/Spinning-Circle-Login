@@ -18,7 +18,7 @@ A modern login UI with an animated ring of ticks that spins around the card on s
 
 A dark-themed login card centered inside a radial ring of glowing tick marks. The ring stays still while the user types, then spins on submit to simulate a loading state.
 
-> 💡 Add a screenshot or GIF here: `![preview](./preview.gif)`
+> 💡 Add a screenshot or GIF here: `![preview](https://raw.githubusercontent.com/shirinmohajeri/Spinning-Circle-Login/refs/heads/main/Spinning%20Circle%20Login.jpg)`
 
 ---
 
